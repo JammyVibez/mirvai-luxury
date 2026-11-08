@@ -3,244 +3,146 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0c0b0a">
-<meta name="description" content="MIRVAI — Realty · Development · Investment. Property is where the future begins.">
-<title>MIRVAI | Realty · Development · Investment</title>
+<meta name="theme-color" content="#f7f3ec">
+<meta name="description" content="MIRVAI — Property is where the future begins.">
+<title>MIRVAI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0e0d0b;--ink2:#2c2824;--cream:#f6f1e8;--cream2:#ebe4d8;--gold:#b8956c;--gold2:#d4b896;--mute:#7a746c;--line:rgba(14,13,11,.08);--ease:cubic-bezier(.25,.1,.25,1)}
+:root{--bg:#f7f3ec;--ink:#161412;--soft:#3d3832;--mute:#8a847c;--gold:#a8895c;--line:rgba(22,20,18,.07);--ease:cubic-bezier(.22,1,.36,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.5}
-img{max-width:100%;display:block}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
-.nav.scrolled{background:rgba(246,241,232,.92);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
-.nav-logo{display:flex;align-items:center;gap:14px}
-.nav-logo svg{height:36px;width:auto}
-.nav-word{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;letter-spacing:.42em;color:var(--cream);text-indent:.42em;transition:color .3s}
-.nav.scrolled .nav-word{color:var(--ink)}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,232,.75);transition:color .25s}
-.nav.scrolled .nav-links a{color:var(--mute)}
-.nav-links a:hover{color:var(--gold2)}
-.nav.scrolled .nav-links a:hover{color:var(--ink)}
-.nav-cta{padding:10px 20px;border:1px solid rgba(246,241,232,.35);background:transparent;color:var(--cream);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
-.nav.scrolled .nav-cta{border-color:var(--ink);color:var(--ink)}
-.nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
-.nav-toggle{display:none;background:0;border:0;color:var(--cream);padding:8px}
-.nav.scrolled .nav-toggle{color:var(--ink)}
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#0c0b0a}
-.hero-media{position:absolute;inset:0}
-.hero-media img{width:100%;height:100%;object-fit:cover}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,10,.45) 0%,rgba(12,11,10,.15) 40%,rgba(12,11,10,.75) 75%,rgba(12,11,10,.95) 100%)}
-.hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 48px 100px}
-.hero-kicker{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold2);font-weight:500;margin-bottom:20px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(42px,6.5vw,72px);line-height:1.08;color:#f6f1e8;letter-spacing:-.02em;max-width:720px;margin-bottom:20px}
-.hero h1 em{font-style:italic;font-weight:400;color:var(--gold2)}
-.hero-lead{font-size:16px;line-height:1.7;color:rgba(246,241,232,.65);font-weight:300;max-width:420px;margin-bottom:36px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
-.btn-gold{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:var(--gold);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:0;transition:background .3s}
-.btn-gold:hover{background:var(--gold2)}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:transparent;color:#f6f1e8;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(246,241,232,.35);transition:all .3s}
-.btn-ghost:hover{border-color:var(--gold2);color:var(--gold2)}
-.strip{background:var(--ink);color:var(--cream);padding:28px 48px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;text-align:center}
-.strip span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(246,241,232,.55);font-weight:500}
-.strip strong{color:var(--gold2);font-weight:500}
-.section{padding:100px 48px;max-width:1200px;margin:0 auto}
-.section-wide{padding:100px 0}
-.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
-.section h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,4vw,48px);line-height:1.15;letter-spacing:-.02em;margin-bottom:16px;max-width:600px}
-.section .lead{font-size:16px;line-height:1.75;color:var(--mute);font-weight:300;max-width:480px}
-.vision{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.vision-img{height:520px;border-radius:2px;overflow:hidden;background:#1a1816}
-.vision-img img{width:100%;height:100%;object-fit:cover}
-.vision-copy .eyebrow{margin-bottom:20px}
-.vision-copy h2{margin-bottom:20px}
-.vision-copy p{font-size:15px;line-height:1.8;color:var(--mute);font-weight:300;margin-bottom:16px;max-width:420px}
-.vision-copy .link{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:2px}
-.props-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:24px;flex-wrap:wrap}
-.props-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.prop{cursor:pointer}
-.prop-img{height:320px;overflow:hidden;border-radius:2px;margin-bottom:18px;background:#ddd;position:relative}
-.prop-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.prop:hover .prop-img img{transform:scale(1.06)}
-.prop-tag{position:absolute;top:14px;left:14px;background:rgba(246,241,232,.95);padding:6px 12px;font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--ink)}
-.prop h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:4px}
-.prop .loc{font-size:13px;color:var(--mute);font-weight:300}
-.prop .price{font-size:12px;letter-spacing:.06em;color:var(--gold);margin-top:8px;font-weight:500}
-.lifestyle{position:relative;min-height:480px;display:flex;align-items:center;overflow:hidden}
-.lifestyle-bg{position:absolute;inset:0}
-.lifestyle-bg img{width:100%;height:100%;object-fit:cover}
-.lifestyle-shade{position:absolute;inset:0;background:rgba(12,11,10,.62)}
-.lifestyle-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:80px 48px;color:#f6f1e8}
-.lifestyle-inner h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,4vw,48px);line-height:1.2;max-width:520px;margin:16px 0 20px}
-.lifestyle-inner p{font-size:15px;line-height:1.75;color:rgba(246,241,232,.7);font-weight:300;max-width:400px;margin-bottom:28px}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
-.svc{padding:36px 28px;background:var(--cream2);border-radius:2px;transition:transform .35s var(--ease),box-shadow .35s}
-.svc:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(14,13,11,.08)}
-.svc-num{font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold);letter-spacing:.1em;margin-bottom:20px}
-.svc h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;margin-bottom:12px}
-.svc p{font-size:14px;line-height:1.7;color:var(--mute);font-weight:300}
-.quote{text-align:center;padding:100px 48px;max-width:800px;margin:0 auto}
-.quote p{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,36px);font-weight:300;font-style:italic;line-height:1.45;color:var(--ink2)}
-.quote .attr{margin-top:24px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
-.cta{background:var(--ink);color:var(--cream);padding:100px 48px;text-align:center}
-.cta .eyebrow{color:var(--gold2)}
-.cta h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,4vw,48px);line-height:1.2;margin:16px auto 20px;max-width:560px}
-.cta p{font-size:15px;line-height:1.7;color:rgba(246,241,232,.6);font-weight:300;max-width:400px;margin:0 auto 36px}
-.cta .btn-gold{margin:0 6px 8px}
-.footer{background:#0a0908;color:rgba(246,241,232,.55);padding:64px 48px 40px}
-.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(246,241,232,.08)}
-.footer-brand .logo-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.footer-brand .word{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:.4em;color:var(--cream);text-indent:.4em}
-.footer-brand p{font-size:13px;line-height:1.7;font-weight:300;max-width:260px}
-.footer h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:18px;font-weight:500}
-.footer ul{list-style:none}
-.footer li{margin-bottom:10px}
-.footer a{font-size:13px;font-weight:300;transition:color .25s}
-.footer a:hover{color:var(--cream)}
-.footer-bottom{max-width:1200px;margin:0 auto;padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;font-weight:300}
-@media(max-width:900px){.nav{padding:0 24px}.nav-links{display:none}.nav-toggle{display:block}.hero-inner,.section,.lifestyle-inner,.cta,.footer{padding-left:24px;padding-right:24px}.hero-inner{padding-bottom:72px}.vision{grid-template-columns:1fr;gap:36px}.vision-img{height:360px}.props-grid,.services-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr;gap:32px}.strip{gap:24px;padding:24px}}
-@media(max-width:560px){.footer-top{grid-template-columns:1fr}.hero h1{font-size:36px}}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,64px);background:transparent;transition:background .5s var(--ease),box-shadow .5s}
+.nav.on{background:rgba(247,243,236,.88);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:42px;height:42px}
+.brand span{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;letter-spacing:.48em;color:rgba(247,243,236,.95);text-indent:.48em;transition:color .4s}
+.nav.on .brand span{color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:40px}
+.nav-r a{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,243,236,.7);transition:color .3s}
+.nav.on .nav-r a{color:var(--mute)}
+.nav-r a:hover{color:var(--gold)}
+.nav.on .nav-r a:hover{color:var(--ink)}
+.hero{position:relative;height:100vh;min-height:560px;max-height:900px;display:flex;align-items:flex-end;overflow:hidden;background:#111}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{transform:scale(1.04);animation:slow 28s ease-in-out infinite alternate}
+@keyframes slow{to{transform:scale(1)}}
+.hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,11,10,.5) 0%,rgba(12,11,10,.12) 38%,rgba(12,11,10,.55) 68%,rgba(12,11,10,.9) 100%)}
+.hero-copy{position:relative;z-index:2;width:100%;padding:0 clamp(24px,5vw,64px) clamp(56px,8vw,96px);max-width:1200px;margin:0 auto}
+.hero-copy .k{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
+.hero-copy h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,6.2vw,68px);line-height:1.08;color:#f7f3ec;letter-spacing:-.025em;max-width:14ch;margin-bottom:18px}
+.hero-copy h1 em{font-style:italic;font-weight:400;color:#d4b896}
+.hero-copy p{font-size:15px;line-height:1.7;color:rgba(247,243,236,.58);font-weight:300;max-width:34ch;margin-bottom:32px}
+.btn{display:inline-block;padding:15px 26px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(247,243,236,.3);color:#f7f3ec;background:transparent;transition:background .35s,border-color .35s,color .35s}
+.btn:hover{background:rgba(247,243,236,.1);border-color:rgba(247,243,236,.55)}
+.btn.solid{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:#c4a574;border-color:#c4a574}
+.intro{text-align:center;padding:clamp(72px,12vw,120px) clamp(24px,5vw,64px);max-width:640px;margin:0 auto}
+.intro .k{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
+.intro h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,3.5vw,40px);line-height:1.25;color:var(--ink);margin-bottom:20px}
+.intro p{font-size:15px;line-height:1.8;color:var(--mute);font-weight:300}
+.props{padding:0 clamp(24px,5vw,64px) clamp(80px,12vw,120px);max-width:1200px;margin:0 auto}
+.props-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px;gap:16px;flex-wrap:wrap}
+.props-head h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(22px,2.5vw,28px)}
+.props-head a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:500}
+.props-head a:hover{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{cursor:pointer}
+.card-img{aspect-ratio:4/5;overflow:hidden;margin-bottom:16px;background:#e8e2d8;position:relative}
+.card-img img{transition:transform 1.4s var(--ease)}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-tag{position:absolute;top:12px;left:12px;background:rgba(247,243,236,.94);padding:6px 10px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink)}
+.card h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;margin-bottom:3px}
+.card .m{font-size:12px;color:var(--mute);font-weight:300}
+.line{height:1px;background:var(--line);max-width:1200px;margin:0 auto;width:calc(100% - clamp(48px,10vw,128px))}
+.cta{text-align:center;padding:clamp(72px,12vw,110px) clamp(24px,5vw,64px)}
+.cta .k{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
+.cta h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,3.5vw,40px);line-height:1.25;margin-bottom:16px}
+.cta p{font-size:15px;line-height:1.75;color:var(--mute);font-weight:300;max-width:360px;margin:0 auto 32px}
+.cta .btn.solid{color:var(--ink)}
+.foot{padding:40px clamp(24px,5vw,64px) 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid var(--line);max-width:1200px;margin:0 auto}
+.foot .b{display:flex;align-items:center;gap:10px}
+.foot .b svg{width:28px;height:28px}
+.foot .b span{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.4em;text-indent:.4em}
+.foot p{font-size:11px;color:var(--mute);font-weight:300;letter-spacing:.04em}
+@media(max-width:800px){.grid{grid-template-columns:1fr;gap:36px;max-width:400px;margin:0 auto}.nav-r a:not(.hide-m){display:none}.hero-copy h1{max-width:12ch}}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo" aria-label="MIRVAI Home">
-    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="24" cy="24" r="22" stroke="#b8956c" stroke-width="1"/>
-      <circle cx="24" cy="24" r="18" stroke="#b8956c" stroke-width=".5" opacity=".5"/>
-      <text x="24" y="29" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" font-weight="500" fill="#b8956c" letter-spacing="1">M</text>
+  <a href="#" class="brand" aria-label="MIRVAI">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" stroke="#a8895c" stroke-width="0.75"/>
+      <circle cx="32" cy="32" r="26" stroke="#a8895c" stroke-width="0.4" opacity="0.45"/>
+      <path d="M32 14 L34.2 22.5 L43 22.5 L36 28 L38.5 36.5 L32 31.2 L25.5 36.5 L28 28 L21 22.5 L29.8 22.5 Z" fill="#a8895c" opacity="0.9"/>
+      <text x="32" y="48" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="11" font-weight="500" fill="#a8895c" letter-spacing="2">M</text>
     </svg>
-    <span class="nav-word">MIRVAI</span>
+    <span>MIRVAI</span>
   </a>
-  <div class="nav-links">
-    <a href="#properties">Properties</a>
-    <a href="#vision">Vision</a>
-    <a href="#services">Services</a>
-    <a href="#enquire">Enquire</a>
-    <a href="#enquire" class="nav-cta">Private enquiry</a>
+  <div class="nav-r">
+    <a href="#homes">Homes</a>
+    <a href="#enquire" class="hide-m">Enquire</a>
   </div>
-  <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-  </button>
 </nav>
 <header class="hero">
-  <div class="hero-media"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1800&q=85" alt="Luxury residence"></div>
-  <div class="hero-shade"></div>
-  <div class="hero-inner">
-    <p class="hero-kicker">Find · Grow · Invest</p>
-    <h1>Property is where<br>the <em>future</em> begins.</h1>
-    <p class="hero-lead">Discover opportunities today. Build lasting value for tomorrow — across Lagos and beyond.</p>
-    <div class="hero-actions">
-      <a href="#properties" class="btn-gold">Explore properties</a>
-      <a href="#vision" class="btn-ghost">Our vision</a>
-    </div>
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=2000&q=90" alt=""></div>
+  <div class="hero-veil"></div>
+  <div class="hero-copy">
+    <p class="k">Find · Grow · Invest</p>
+    <h1>Property is where the <em>future</em> begins.</h1>
+    <p>Discover opportunities today. Build lasting value for tomorrow.</p>
+    <a href="#homes" class="btn">Explore homes</a>
   </div>
 </header>
-<div class="strip">
-  <span><strong>Realty</strong> · Homes & land</span>
-  <span><strong>Development</strong> · Building possibility</span>
-  <span><strong>Investment</strong> · Lasting value</span>
-</div>
-<section class="section" id="vision">
-  <div class="vision">
-    <div class="vision-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1000&q=85" alt="Architecture"></div>
-    <div class="vision-copy">
-      <p class="eyebrow">The MIRVAI vision</p>
-      <h2>Beyond property.<br>Building possibility.</h2>
-      <p>From exceptional homes to future developments, MIRVAI is shaped for those who see property as more than a transaction — as the foundation of lasting value.</p>
-      <p>We present carefully considered opportunities across Lagos Island and the Mainland, with the same restraint and care you would expect from a private advisory.</p>
-      <a href="#enquire" class="link">Speak with us →</a>
-    </div>
-  </div>
+<section class="intro">
+  <p class="k">The MIRVAI vision</p>
+  <h2>Beyond property.<br>Building possibility.</h2>
+  <p>From exceptional homes to future developments — presented with calm, care, and clarity across Lagos.</p>
 </section>
-<section class="section" id="properties">
+<section class="props" id="homes">
   <div class="props-head">
-    <div>
-      <p class="eyebrow">Discover</p>
-      <h2>Find your next property</h2>
-      <p class="lead" style="margin-top:12px">Houses, land and commercial — presented without noise.</p>
-    </div>
-    <a href="#enquire" class="btn-ghost" style="color:var(--ink);border-color:var(--line)">View all →</a>
+    <h3>Selected homes</h3>
+    <a href="#enquire">Private enquiry →</a>
   </div>
-  <div class="props-grid">
-    <article class="prop">
-      <div class="prop-img"><span class="prop-tag">Featured</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=85" alt="Contemporary Duplex"></div>
-      <h3>Contemporary Duplex</h3>
-      <p class="loc">Lekki, Lagos</p>
-      <p class="price">Price on request</p>
+  <div class="grid">
+    <article class="card">
+      <div class="card-img"><span class="card-tag">Featured</span><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85" alt="Contemporary Duplex"></div>
+      <h4>Contemporary Duplex</h4>
+      <p class="m">Lekki, Lagos</p>
     </article>
-    <article class="prop">
-      <div class="prop-img"><span class="prop-tag">Land</span><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cd00?w=800&q=85" alt="Residential Land"></div>
-      <h3>Residential Land</h3>
-      <p class="loc">Ibeju-Lekki, Lagos</p>
-      <p class="price">Price on request</p>
+    <article class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85" alt="Limestone Residence"></div>
+      <h4>The Limestone Residence</h4>
+      <p class="m">Ikoyi, Lagos</p>
     </article>
-    <article class="prop">
-      <div class="prop-img"><span class="prop-tag">Residence</span><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85" alt="Ikoyi Terrace"></div>
-      <h3>The Limestone Residence</h3>
-      <p class="loc">Ikoyi, Lagos</p>
-      <p class="price">Price on request</p>
+    <article class="card">
+      <div class="card-img"><span class="card-tag">Land</span><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cd00?w=900&q=85" alt="Residential Land"></div>
+      <h4>Residential Land</h4>
+      <p class="m">Ibeju-Lekki, Lagos</p>
     </article>
   </div>
 </section>
-<section class="section-wide lifestyle">
-  <div class="lifestyle-bg"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1800&q=85" alt="Lifestyle"></div>
-  <div class="lifestyle-shade"></div>
-  <div class="lifestyle-inner">
-    <p class="eyebrow" style="color:var(--gold2)">Lifestyle</p>
-    <h2>Because life is too short not to live it well.</h2>
-    <p>Homes and land chosen for how they feel to inhabit — light, space, and a quieter pace in the city.</p>
-    <a href="#enquire" class="btn-gold">Begin a private enquiry</a>
-  </div>
-</section>
-<section class="section" id="services">
-  <p class="eyebrow">The wider group</p>
-  <h2>More than property.</h2>
-  <p class="lead">MIRVAI’s long-term vision includes connected work in development, construction and investment — introduced carefully, when the time is right.</p>
-  <div class="services-grid">
-    <div class="svc"><div class="svc-num">01</div><h3>Realty</h3><p>Exceptional homes, land and commercial property across Lagos — guided, not rushed.</p></div>
-    <div class="svc"><div class="svc-num">02</div><h3>Development</h3><p>From land to lasting assets. Partnerships and projects shaped for the long term.</p></div>
-    <div class="svc"><div class="svc-num">03</div><h3>Investment</h3><p>Structured opportunities for those who see property as a foundation of value.</p></div>
-  </div>
-</section>
-<section class="quote">
-  <p>“We don’t rush the decision. We help you see the property clearly.”</p>
-  <div class="attr">— Mirvai</div>
-</section>
+<div class="line"></div>
 <section class="cta" id="enquire">
-  <p class="eyebrow">Private enquiry</p>
+  <p class="k">Private enquiry</p>
   <h2>Tell us what you’re looking for.</h2>
-  <p>A short conversation about area, budget and timing. No pressure — just clarity.</p>
-  <a href="mailto:hello@mirvai.com" class="btn-gold">Email MIRVAI</a>
-  <a href="#" class="btn-ghost" onclick="alert('WhatsApp — connect your number');return false">WhatsApp</a>
+  <p>A short conversation. No pressure — just clarity.</p>
+  <a href="mailto:hello@mirvai.com" class="btn solid">Begin enquiry</a>
 </section>
-<footer class="footer">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo-row">
-        <svg viewBox="0 0 40 40" width="40" height="40" fill="none"><circle cx="20" cy="20" r="18" stroke="#b8956c" stroke-width="1"/><text x="20" y="25" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" fill="#b8956c">M</text></svg>
-        <span class="word">MIRVAI</span>
-      </div>
-      <p>Realty · Development · Investment. Property is where the future begins.</p>
-    </div>
-    <div><h4>Explore</h4><ul><li><a href="#properties">Properties</a></li><li><a href="#vision">Vision</a></li><li><a href="#services">Services</a></li><li><a href="#enquire">Enquire</a></li></ul></div>
-    <div><h4>Lagos</h4><ul><li><a href="#">Island</a></li><li><a href="#">Mainland</a></li><li><a href="#">By appointment</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="mailto:hello@mirvai.com">hello@mirvai.com</a></li><li><a href="#">Private office</a></li></ul></div>
+<footer class="foot">
+  <div class="b">
+    <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="30" stroke="#a8895c" stroke-width="0.75"/><path d="M32 18 L33.5 24 L39.5 24 L34.8 27.8 L36.5 33.8 L32 30.2 L27.5 33.8 L29.2 27.8 L24.5 24 L30.5 24 Z" fill="#a8895c"/><text x="32" y="46" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#a8895c">M</text></svg>
+    <span>MIRVAI</span>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 MIRVAI. All rights reserved.</span>
-    <span>Crafted for lasting value.</span>
-  </div>
+  <p>Realty · Development · Investment</p>
 </footer>
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+const n=document.getElementById('nav');
+window.addEventListener('scroll',()=>n.classList.toggle('on',scrollY>50),{passive:true});
 </script>
 </body>
 </html>
